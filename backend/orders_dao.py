@@ -30,6 +30,7 @@ def insert_order(connection, order):
 
     return order_id
 
+# This method is used to get order details from database.
 def get_order_details(connection, order_id):
     cursor = connection.cursor()
 
