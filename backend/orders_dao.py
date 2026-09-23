@@ -57,6 +57,7 @@ def get_order_details(connection, order_id):
 
     return records
 
+# This method is used to get all the order from database.
 def get_all_orders(connection):
     cursor = connection.cursor()
     query = ("SELECT * FROM `order`")
