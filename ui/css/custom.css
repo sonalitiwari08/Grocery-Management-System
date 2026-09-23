@@ -1,0 +1,2489 @@
+/* =========================================================
+   GROCERY STORE MANAGEMENT SYSTEM
+   Custom UI
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.rows-content-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-default {
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+}
+
+.navbar-nav > li > a {
+    color: #555;
+    font-size: 20px;
+    padding: 17px 18px;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav > li > a:hover {
+    color: #337ab7;
+    background: #f5f8fc;
+}
+
+
+/* Mobile menu icon */
+
+.button-menu-mobile {
+    background: transparent;
+    border: none;
+    color: #444;
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content-page {
+    background: #f5f7fb;
+}
+
+.body.content {
+    padding: 30px;
+}
+
+
+/* =========================================================
+   DASHBOARD CARD
+   ========================================================= */
+
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04),
+        0 12px 35px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+   ========================================================= */
+
+.dashboard-header {
+    min-height: 120px;
+    padding: 25px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+}
+
+/* Heading */
+
+
+.header-title {
+    grid-column: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    white-space: nowrap;
+
+    /* IMPORTANT: creates space before buttons */
+    margin-right: 80px;
+}
+
+.header-title h1 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    color: #2d3748;
+
+    text-align: center;
+}
+
+
+/* Heading Icon */
+
+.header-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #eaf3ff;
+    color: #337ab7;
+
+    font-size: 22px;
+}
+
+/* =========================================================
+   HEADER ACTION BUTTONS
+   ========================================================= */
+
+.header-actions {
+    grid-column: 3;
+
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    /* Additional space from title */
+    margin-left: 30px;
+}
+/* Common Button */
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+.action-btn:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+
+/* Manage Products */
+
+.product-btn {
+    background: #f1f3f6;
+    color: #444;
+
+    border: 1px solid #e1e4e8;
+}
+
+.product-btn:hover {
+    background: #e7eaee;
+    color: #222;
+}
+
+
+/* New Order */
+
+.order-btn {
+    background: #337ab7;
+    color: #ffffff;
+
+    border: 1px solid #337ab7;
+}
+
+.order-btn:hover {
+    background: #286090;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DASHBOARD BODY
+   ========================================================= */
+
+.dashboard-body {
+    padding: 25px 30px 30px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+.section-heading p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.table-container {
+    border: 1px solid #e9ecef;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   ORDERS TABLE
+   ========================================================= */
+
+.orders-table {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: collapse;
+}
+
+
+/* Table Header */
+
+.orders-table thead {
+    background: #f7f8fa;
+}
+
+.orders-table thead th {
+    padding: 15px 18px;
+
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #666;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+
+/* Table Body */
+
+.orders-table tbody td {
+    padding: 15px 18px;
+
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+
+    font-size: 13px;
+
+    color: #555;
+
+    vertical-align: middle;
+}
+
+
+/* Last row */
+
+.orders-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Hover */
+
+.orders-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+
+/* Empty Icon */
+
+.empty-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #a0aec0;
+
+    font-size: 28px;
+}
+
+
+.empty-state h3 {
+    margin: 0 0 7px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+.empty-state p {
+    margin: 0 0 20px;
+
+    font-size: 13px;
+
+    color: #999;
+}
+
+
+/* Empty state button */
+
+.empty-order-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 9px 15px;
+
+    background: #337ab7;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.empty-order-btn:hover {
+    background: #286090;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.modal-content {
+    border: none;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+
+        padding: 25px;
+    }
+
+    .header-title {
+        grid-column: 1;
+    }
+
+    .header-actions {
+
+
+
+
+
+        grid-column: 1;
+
+        justify-self: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-header {
+        padding: 20px 15px;
+    }
+
+    .header-title {
+        white-space: normal;
+
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-title h1 {
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .header-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   GSMS SIDEBAR
+   ========================================================= */
+
+.gsms-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: -270px;
+
+    width: 270px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    z-index: 99999;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+
+    transition: left 0.3s ease;
+}
+
+
+/* Sidebar OPEN */
+
+.gsms-sidebar.open {
+    left: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+   ========================================================= */
+
+.sidebar-header {
+    height: 85px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.sidebar-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eaf3ff;
+
+    color: #337ab7;
+
+    font-size: 22px;
+}
+
+
+.sidebar-header h3 {
+    margin: 0 0 3px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.sidebar-header span {
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+   ========================================================= */
+
+.sidebar-nav {
+    padding: 20px 12px;
+}
+
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 6px;
+
+    border-radius: 7px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+
+.sidebar-link i {
+    font-size: 19px;
+}
+
+
+.sidebar-link:hover {
+    background: #f1f6fc;
+
+    color: #337ab7;
+
+    text-decoration: none;
+}
+
+
+.sidebar-link.active {
+    background: #eaf3ff;
+
+    color: #337ab7;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 99998;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+.sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   HAMBURGER BUTTON
+   ========================================================= */
+
+.button-menu-mobile {
+    position: relative;
+
+    z-index: 100000;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.button-menu-mobile:hover {
+    background: #f1f6fc;
+
+    color: #337ab7;
+}
+
+
+.button-menu-mobile i {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .header-title {
+        grid-column: 1;
+
+        margin-right: 0;
+    }
+
+    .header-actions {
+        grid-column: 1;
+
+        justify-self: center;
+
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-header {
+        padding: 20px 15px;
+    }
+
+    .header-title {
+        white-space: normal;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .header-title h1 {
+        font-size: 21px;
+    }
+
+    .header-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   PRODUCT PAGE
+   ========================================================= */
+
+
+/* Product table action column */
+
+.orders-table th:last-child,
+.orders-table td:last-child {
+    text-align: center;
+}
+
+
+/* =========================================================
+   PRODUCT MODAL
+   ========================================================= */
+
+.product-modal {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Modal Header */
+
+.product-modal-header {
+    padding: 20px 22px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Modal Title */
+
+.modal-title-wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.modal-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eaf3ff;
+
+    color: #337ab7;
+
+    font-size: 20px;
+}
+
+
+.product-modal-header .modal-title {
+    margin: 0 0 4px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.product-modal-header p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #999;
+}
+
+
+/* Close button */
+
+.product-modal-header .close {
+    font-size: 25px;
+
+    color: #777;
+
+    opacity: 0.7;
+
+    transition: all 0.2s ease;
+}
+
+
+.product-modal-header .close:hover {
+    color: #333;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MODAL BODY
+   ========================================================= */
+
+.product-modal .modal-body {
+    padding: 25px;
+}
+
+
+.product-modal .form-group {
+    margin-bottom: 20px;
+}
+
+
+.product-modal label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    color: #444;
+}
+
+
+.product-modal .form-control {
+    height: 42px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 6px;
+
+    box-shadow: none;
+
+    font-size: 13px;
+
+    color: #444;
+
+    transition: all 0.2s ease;
+}
+
+
+.product-modal .form-control:focus {
+    border-color: #337ab7;
+
+    box-shadow:
+        0 0 0 3px rgba(51, 122, 183, 0.08);
+}
+
+
+/* =========================================================
+   PRICE INPUT
+   ========================================================= */
+
+.price-input {
+    position: relative;
+}
+
+
+.price-input > span {
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+.price-input .form-control {
+    padding-left: 30px;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+   ========================================================= */
+
+.product-modal .modal-footer {
+    padding: 15px 22px;
+
+    background: #fafafa;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* Cancel */
+
+.modal-cancel-btn {
+    padding: 9px 16px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+
+.modal-cancel-btn:hover {
+    background: #f2f2f2;
+
+    color: #333;
+}
+
+
+/* Save */
+
+.modal-save-btn {
+    padding: 9px 17px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #337ab7;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+
+.modal-save-btn:hover {
+    background: #286090;
+
+    color: #ffffff;
+}
+
+
+.modal-save-btn i {
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.gsms-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: -270px;
+
+    width: 270px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    z-index: 99999;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+
+    transition: left 0.3s ease;
+}
+
+
+.gsms-sidebar.open {
+    left: 0;
+}
+
+
+/* Sidebar Header */
+
+.sidebar-header {
+    height: 85px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.sidebar-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eaf3ff;
+
+    color: #337ab7;
+
+    font-size: 22px;
+}
+
+
+.sidebar-header h3 {
+    margin: 0 0 3px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.sidebar-header span {
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+/* Sidebar Navigation */
+
+.sidebar-nav {
+    padding: 20px 12px;
+}
+
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 6px;
+
+    border-radius: 7px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+
+.sidebar-link i {
+    font-size: 19px;
+}
+
+
+.sidebar-link:hover {
+    background: #f1f6fc;
+
+    color: #337ab7;
+
+    text-decoration: none;
+}
+
+
+.sidebar-link.active {
+    background: #eaf3ff;
+
+    color: #337ab7;
+
+    font-weight: 500;
+}
+
+
+/* Sidebar Overlay */
+
+.sidebar-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 99998;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+.sidebar-overlay.open {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.button-menu-mobile {
+    position: relative;
+
+    z-index: 100000;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    cursor: pointer;
+}
+
+
+.button-menu-mobile:hover {
+    background: #f1f6fc;
+
+    color: #337ab7;
+}
+
+
+.button-menu-mobile i {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-header {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .header-title {
+        grid-column: 1;
+
+        margin-right: 0;
+    }
+
+
+    .header-actions {
+        grid-column: 1;
+
+        justify-self: center;
+
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-header {
+        padding: 20px 15px;
+    }
+
+
+    .header-title {
+        white-space: normal;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .header-title h1 {
+        font-size: 21px;
+    }
+
+
+    .header-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+
+    .action-btn {
+        width: 100%;
+    }
+
+
+    .product-modal .modal-body {
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   NEW ORDER PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   ORDER HEADER
+   ========================================================= */
+
+.order-header-card {
+    overflow: visible;
+}
+
+
+.order-page-header {
+
+    min-height: 125px;
+
+    padding: 25px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid #eeeeee;
+
+    background: #ffffff;
+
+}
+
+
+/* Center Title */
+
+.order-page-header .header-title {
+
+    grid-column: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    white-space: nowrap;
+
+    margin-right: 70px;
+
+}
+
+
+.order-page-header .header-title h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    color: #2d3748;
+
+}
+
+
+/* Customer field */
+
+.customer-field {
+
+    grid-column: 3;
+
+    justify-self: end;
+
+    width: 230px;
+
+}
+
+
+.customer-field label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: #666;
+
+}
+
+
+.customer-field .form-control {
+
+    height: 40px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 6px;
+
+    box-shadow: none;
+
+    font-size: 13px;
+
+}
+
+
+.customer-field .form-control:focus {
+
+    border-color: #337ab7;
+
+    box-shadow:
+        0 0 0 3px rgba(51, 122, 183, 0.08);
+
+}
+
+
+/* =========================================================
+   ORDER TABLE HEADER
+   ========================================================= */
+
+.order-table-header {
+
+    display: grid;
+
+    grid-template-columns:
+        4fr
+        3fr
+        2fr
+        3fr;
+
+    align-items: center;
+
+    padding: 14px 30px;
+
+    background: #f7f8fa;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.order-column {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #666;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+.total-column {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   ADD MORE BUTTON
+   ========================================================= */
+
+.add-more-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 7px 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #337ab7;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.add-more-btn:hover {
+
+    background: #286090;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+}
+
+
+.add-more-btn i {
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   PRODUCT ROWS
+   ========================================================= */
+
+.product-box-extra {
+
+    margin-top: 15px;
+
+}
+
+
+.order-product-row {
+
+    display: grid;
+
+    grid-template-columns:
+        4fr
+        3fr
+        2fr
+        3fr;
+
+    align-items: center;
+
+    min-height: 75px;
+
+    padding: 15px 30px;
+
+    margin-bottom: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.03);
+
+    transition: all 0.2s ease;
+
+}
+
+
+.order-product-row:hover {
+
+    border-color: #d7e5f3;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
+
+}
+
+
+/* Product field */
+
+.order-product-field {
+
+    padding-right: 18px;
+
+}
+
+
+.order-product-field:last-child {
+
+    padding-right: 0;
+
+}
+
+
+/* Select */
+
+.cart-product {
+
+    max-width: 250px;
+
+    height: 40px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 6px;
+
+    box-shadow: none;
+
+    font-size: 13px;
+
+}
+
+
+.cart-product:focus {
+
+    border-color: #337ab7;
+
+    box-shadow:
+        0 0 0 3px rgba(51, 122, 183, 0.08);
+
+}
+
+
+/* Price */
+
+.price-field {
+
+    position: relative;
+
+    max-width: 150px;
+
+}
+
+
+.price-field > span {
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #777;
+
+    font-size: 13px;
+
+    z-index: 2;
+
+}
+
+
+.product-price {
+
+    width: 100%;
+
+    height: 40px;
+
+    padding-left: 27px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 6px;
+
+    background: #f8f9fa;
+
+    color: #555;
+
+    font-size: 13px;
+
+}
+
+
+/* Quantity */
+
+.product-qty {
+
+    max-width: 100px;
+
+    height: 40px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 6px;
+
+    box-shadow: none;
+
+    font-size: 13px;
+
+}
+
+
+/* Item Total */
+
+.item-total-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.product-total {
+
+    width: 100px;
+
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* Remove */
+
+.remove-row {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 7px 10px;
+
+    border: 1px solid #f0b8b8;
+
+    border-radius: 6px;
+
+    background: #fff5f5;
+
+    color: #d9534f;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.remove-row:hover {
+
+    background: #d9534f;
+
+    color: #ffffff;
+
+    border-color: #d9534f;
+
+}
+
+
+.remove-row i {
+
+    font-size: 14px;
+
+}
+
+
+/* Mobile labels */
+
+.mobile-product-label {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+   ========================================================= */
+
+.order-summary-card {
+
+    margin-top: 15px;
+
+}
+
+
+.order-summary {
+
+    min-height: 85px;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 25px;
+
+}
+
+
+.summary-label {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #444;
+
+}
+
+
+.summary-value {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.grand-total-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.currency-symbol {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+.product-grand-total {
+
+    width: 120px;
+
+    height: 42px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #f5f7fa;
+
+    color: #333;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    text-align: right;
+
+}
+
+
+/* Save Order */
+
+.save-order-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #337ab7;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.save-order-btn:hover {
+
+    background: #286090;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+}
+
+
+.save-order-btn i {
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE ORDER PAGE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .order-page-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .order-page-header .header-title {
+
+        grid-column: 1;
+
+        margin-right: 0;
+
+    }
+
+
+    .customer-field {
+
+        grid-column: 1;
+
+        justify-self: center;
+
+        width: 300px;
+
+        max-width: 100%;
+
+    }
+
+
+    .order-table-header {
+
+        grid-template-columns:
+            3fr
+            2fr
+            2fr
+            3fr;
+
+        padding: 14px 20px;
+
+    }
+
+
+    .order-product-row {
+
+        grid-template-columns:
+            3fr
+            2fr
+            2fr
+            3fr;
+
+        padding: 15px 20px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .order-page-header {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .order-page-header .header-title {
+
+        flex-direction: column;
+
+        white-space: normal;
+
+        text-align: center;
+
+    }
+
+
+    .order-page-header .header-title h1 {
+
+        font-size: 21px;
+
+    }
+
+
+    .order-table-header {
+
+        display: none;
+
+    }
+
+
+    .order-product-row {
+
+        display: block;
+
+        padding: 18px;
+
+    }
+
+
+    .order-product-field {
+
+        padding: 0;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .order-product-field:last-child {
+
+        margin-bottom: 0;
+
+    }
+
+
+    .mobile-product-label {
+
+        display: block;
+
+        margin-bottom: 6px;
+
+        font-size: 12px;
+
+        font-weight: 500;
+
+        color: #666;
+
+    }
+
+
+    .cart-product,
+    .price-field,
+    .product-qty {
+
+        max-width: 100%;
+
+        width: 100%;
+
+    }
+
+
+    .item-total-wrapper {
+
+        justify-content: space-between;
+
+    }
+
+
+    .product-total {
+
+        width: 120px;
+
+    }
+
+
+    .order-summary {
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+    }
+
+
+    .summary-value {
+
+        justify-content: space-between;
+
+    }
+
+
+    .save-order-btn {
+
+        flex: 1;
+
+    }
+
+}
+
+/* =========================================================
+   ORDER PRODUCT CONTAINER
+   ========================================================= */
+
+#itemsInOrder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Every product stays inside product section */
+
+#itemsInOrder .product-box {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* =========================================================
+   GRAND TOTAL
+   ========================================================= */
+
+.order-summary-card {
+    width: 100%;
+    margin-top: 18px !important;
+    margin-bottom: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.order-summary {
+    width: 100%;
+    min-height: 85px;
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 25px;
+
+    background: #ffffff;
+}
+
+
+.summary-label {
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #333;
+
+    white-space: nowrap;
+}
+
+
+.summary-value {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.grand-total-wrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.currency-symbol {
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.product-grand-total {
+    width: 120px;
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #f5f7fa;
+
+    color: #333;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+.save-order-btn {
+    height: 42px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #337ab7;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+.save-order-btn:hover {
+    background: #286090;
+
+    color: #ffffff;
+}
+
+/* =====================================================
+   PRODUCT LIST
+   ===================================================== */
+
+#itemsInOrder {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+
+/* Each product row */
+
+#itemsInOrder .order-product-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        34%
+        22%
+        18%
+        26%;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e7ec;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   GRAND TOTAL
+   ===================================================== */
+
+#orderSummary {
+    display: block !important;
+
+    position: relative;
+
+    clear: both;
+
+    width: 100%;
+
+    margin-top: 20px !important;
+
+    margin-bottom: 20px !important;
+}
+
+
+.order-summary-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+.order-summary {
+    min-height: 85px;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 25px;
+}
+
+
+.summary-label {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    white-space: nowrap;
+}
+
+
+.summary-value {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.grand-total-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.currency-symbol {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.product-grand-total {
+    width: 120px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #f5f7fa;
+
+    padding: 0 12px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+.save-order-btn {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #337ab7;
+
+    color: white;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+.save-order-btn:hover {
+    background: #286090;
+}
+
+
+/* =====================================================
+   HIDDEN TEMPLATE
+   ===================================================== */
+
+#productTemplate {
+    display: none !important;
+}
+
+/* =========================================
+   PRODUCT FORM VALIDATION
+   ========================================= */
+
+.form-error {
+    display: block;
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 6px;
+    min-height: 18px;
+}
+
+.form-control.input-error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.08);
+}
+
+.form-control.input-success {
+    border-color: #28a745;
+}
+
+
+/* Remove browser number arrows if needed */
+#price::-webkit-outer-spin-button,
+#price::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+

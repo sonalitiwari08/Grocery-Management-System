@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>GSMS - Grocery Store Management System</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="csrf-token" content="kmapods5wQ5L1hn7rcR9OPst7EsN0gC7SrHh3m9K">
+
+    <!-- Material Design Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,700">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- ONLY ONE CUSTOM CSS FILE -->
+    <link rel="stylesheet" href="css/custom.css?v=2.0">
+</head>
+
+<body class="tooltips">
+
+<!-- Sidebar -->
+<aside id="gsmsSidebar" class="gsms-sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="sidebar-logo">
+            <i class="zmdi zmdi-shopping-cart"></i>
+        </div>
+
+        <div>
+            <h3>GSMS</h3>
+            <span>Grocery Store</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="sidebar-link active">
+            <i class="zmdi zmdi-view-dashboard"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="manage-product.html" class="sidebar-link">
+            <i class="zmdi zmdi-assignment"></i>
+            <span>Manage Products</span>
+        </a>
+
+        <a href="order.html" class="sidebar-link">
+            <i class="zmdi zmdi-shopping-cart"></i>
+            <span>New Order</span>
+        </a>
+
+    </nav>
+
+</aside>
+
+<!-- Dark overlay -->
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header content rows-content-header">
+
+        <button id="menuButton" class="button-menu-mobile" type="button">
+            <i class="zmdi zmdi-menu"></i>
+        </button>
+
+        <nav class="navbar navbar-default" role="navigation">
+
+            <div class="container">
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav visible-lg visible-md limit-chars">
+
+                        <li>
+                            <a href="index.html" title="Orders">
+                                <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="manage-product.html" title="Products">
+                                <i class="zmdi zmdi-assignment zmdi-hc-fw"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="right content-page">
+
+        <div class="body content rows scroll-y">
+
+            <section class="dashboard-card" id="taskFormContainer">
+
+                <!-- Page Header -->
+                <div class="dashboard-header">
+
+                    <div class="header-title">
+                        <span class="header-icon">
+                            <i class="zmdi zmdi-shopping-cart"></i>
+                        </span>
+
+                        <h1>Grocery Store Management System</h1>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="header-actions">
+
+                        <a href="manage-product.html"
+                           class="action-btn product-btn">
+
+                            <i class="zmdi zmdi-assignment"></i>
+
+                            <span>Manage Products</span>
+
+                        </a>
+
+                        <a href="order.html"
+                           class="action-btn order-btn">
+
+                            <i class="zmdi zmdi-plus"></i>
+
+                            <span>New Order</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ORDERS ================= -->
+                <div class="dashboard-body">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Recent Orders</h2>
+                            <p>View your latest grocery orders</p>
+                           
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <div class="table-responsive">
+
+                            <table class="table orders-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Order Number</th>
+                                        <th>Customer Name</th>
+                                        <th>Total Cost</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <!--
+                                        Orders will be dynamically
+                                        inserted here by dashboard.js
+                                    -->
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <!-- Empty State -->
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                <i class="zmdi zmdi-shopping-cart"></i>
+                            </div>
+
+                            <h3>No Orders Found</h3>
+
+                            <p>
+                                Your recent orders will appear here.
+                            </p>
+
+                            <a href="order.html" class="empty-order-btn">
+                                <i class="zmdi zmdi-plus"></i>
+                                Create New Order
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PROFILE MODAL ================= -->
+            <div class="modal" id="userProfileModal" role="dialog">
+
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+
+                        <div class="modal-body text-center">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= LOADING MODAL ================= -->
+    <div class="modal fade-scale"
+         id="myModal"
+         role="dialog"
+         data-backdrop="static">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+
+                    <img
+                        src="https://demo.test.cloint.com/assets/images/spinner.gif"
+                        width="40"
+                        style="margin: 60px auto;"
+                        alt="Loading">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/packages/jquery.min.js"></script>
+<script src="js/custom/common.js"></script>
+<script src="js/custom/dashboard.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.getElementById("menuButton");
+    const sidebar = document.getElementById("gsmsSidebar");
+    const overlay = document.getElementById("sidebarOverlay");
+
+    if (!menuButton || !sidebar || !overlay) {
+        console.error("Sidebar elements not found!");
+        return;
+    }
+
+    /* Open / Close sidebar */
+    menuButton.addEventListener("click", function () {
+
+        sidebar.classList.toggle("open");
+        overlay.classList.toggle("open");
+
+    });
+
+
+    /* Close sidebar when clicking outside */
+    overlay.addEventListener("click", function () {
+
+        sidebar.classList.remove("open");
+        overlay.classList.remove("open");
+
+    });
+
+
+    /* Close sidebar after clicking a menu item */
+    const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+    sidebarLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+            overlay.classList.remove("open");
+
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>

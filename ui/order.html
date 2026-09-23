@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>GSMS - New Order</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <meta name="csrf-token" content="kmapods5wQ5L1hn7rcR9OPst7EsN0gC7SrHh3m9K" />
+
+        <!-- Material Design Icons -->
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+        />
+
+        <!-- Google Font -->
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,700" />
+
+        <!-- Bootstrap -->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+        <!-- Existing CSS -->
+
+        <link rel="stylesheet" href="css/style.css?v=1.0" />
+
+        <!-- ONE CUSTOM CSS -->
+
+        <link rel="stylesheet" href="css/custom.css?v=2.0" />
+    </head>
+
+    <body class="tooltips">
+        <div class="container">
+            <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+            <aside id="gsmsSidebar" class="gsms-sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+
+                    <div>
+                        <h3>GSMS</h3>
+
+                        <span>Grocery Store</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="index.html" class="sidebar-link">
+                        <i class="zmdi zmdi-view-dashboard"></i>
+
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="manage-product.html" class="sidebar-link">
+                        <i class="zmdi zmdi-assignment"></i>
+
+                        <span>Manage Products</span>
+                    </a>
+
+                    <a href="order.html" class="sidebar-link active">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+
+                        <span>New Order</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Sidebar Overlay -->
+
+            <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+            <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+            <header class="header content rows-content-header">
+                <!-- Hamburger -->
+
+                <button id="menuButton" class="button-menu-mobile" type="button">
+                    <i class="zmdi zmdi-menu"></i>
+                </button>
+
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav visible-lg visible-md limit-chars">
+                                <li>
+                                    <a href="index.html" title="Dashboard">
+                                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="manage-product.html" title="Products">
+                                        <i class="zmdi zmdi-assignment zmdi-hc-fw"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="order.html" title="New Order">
+                                        <i class="zmdi zmdi-shopping-cart zmdi-hc-fw"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+            <main class="right content-page">
+                <div class="body content rows scroll-y">
+                    <form id="orderForm">
+                        <!-- =================================================
+                     ORDER HEADER
+                     ================================================= -->
+
+                        <section class="dashboard-card order-header-card">
+                            <div class="order-page-header">
+                                <!-- Center Title -->
+
+                                <div class="header-title">
+                                    <span class="header-icon">
+                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    </span>
+
+                                    <h1>New Order</h1>
+                                </div>
+
+                                <!-- Customer -->
+
+                                <div class="customer-field">
+                                    <label for="customerName"> Customer Name </label>
+
+                                    <input
+                                        name="customerName"
+                                        id="customerName"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Enter customer name"
+                                        autocomplete="off"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- =================================================
+                         ORDER TABLE HEADER
+                         ================================================= -->
+
+                            <div class="order-table-header">
+                                <div class="order-column product-column">Product</div>
+
+                                <div class="order-column price-column">Price</div>
+
+                                <div class="order-column quantity-column">Quantity</div>
+
+                                <div class="order-column total-column">
+                                    <span> Total </span>
+
+                                    <button class="add-more-btn" type="button" id="addMoreButton">
+                                        <i class="zmdi zmdi-plus"></i>
+
+                                        Add More
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- =================================================
+                     PRODUCTS
+                     ================================================= -->
+
+                        <!-- =====================================================
+     PRODUCTS
+     ===================================================== -->
+
+<div id="itemsInOrder" class="product-box-extra">
+    <!-- Product rows will be added here by JavaScript -->
+</div>
+
+
+                        <!-- =================================================
+                     ORDER TOTAL
+                     ================================================= -->
+
+                        <section id="orderSummary" class="dashboard-card order-summary-card">
+                            <div class="order-summary">
+                                <div class="summary-label">
+                                    <span> Grand Total </span>
+                                </div>
+
+                                <div class="summary-value">
+                                    <div class="grand-total-wrapper">
+                                        <span class="currency-symbol"> ₹ </span>
+
+                                        <input
+                                            id="product_grand_total"
+                                            name="product_grand_total"
+                                            class="product-grand-total"
+                                            value="0.0"
+                                            readonly
+                                        />
+                                    </div>
+
+                                    <button class="save-order-btn" type="button" id="saveOrder">
+                                        <i class="zmdi zmdi-check"></i>
+
+                                        Save Order
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+
+                    <!-- =====================================================
+                 HIDDEN PRODUCT TEMPLATE
+                 order.js uses this template
+                 ===================================================== -->
+
+                    <!-- =====================================================
+     HIDDEN PRODUCT TEMPLATE
+     ===================================================== -->
+
+<div id="productTemplate" class="product-template" style="display: none;">
+
+    <div class="order-product-row">
+
+        <!-- PRODUCT -->
+        <div class="order-product-field product-column">
+
+            <label class="mobile-product-label">
+                Product
+            </label>
+
+            <select
+                name="product"
+                class="form-control cart-product">
+            </select>
+
+        </div>
+
+
+        <!-- PRICE -->
+        <div class="order-product-field price-column">
+
+            <label class="mobile-product-label">
+                Price
+            </label>
+
+            <div class="price-field">
+
+                <span>₹</span>
+
+                <input
+                    name="product_price"
+                    class="product-price"
+                    value="0.0"
+                    readonly
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- QUANTITY -->
+        <div class="order-product-field quantity-column">
+
+            <label class="mobile-product-label">
+                Quantity
+            </label>
+
+            <input
+                name="qty"
+                type="number"
+                min="1"
+                class="form-control product-qty"
+                value="1"
+            >
+
+        </div>
+
+
+        <!-- TOTAL -->
+        <div class="order-product-field total-column">
+
+            <label class="mobile-product-label">
+                Total
+            </label>
+
+            <div class="item-total-wrapper">
+
+                <input
+                    name="item_total"
+                    class="product-total"
+                    value="0.0"
+                    readonly
+                >
+
+                <span>₹</span>
+
+                <button
+                    class="remove-row"
+                    type="button">
+
+                    <i class="zmdi zmdi-delete"></i>
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+                </div>
+            </main>
+        </div>
+
+        <!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+        <script src="js/packages/jquery.min.js"></script>
+
+        <script src="js/packages/bootstrap.min.js"></script>
+
+        <script src="js/custom/common.js"></script>
+
+        <script src="js/custom/order.js"></script>
+
+        <!-- =====================================================
+     SIDEBAR JAVASCRIPT
+     ===================================================== -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuButton = document.getElementById("menuButton");
+
+                const sidebar = document.getElementById("gsmsSidebar");
+
+                const overlay = document.getElementById("sidebarOverlay");
+
+                if (!menuButton || !sidebar || !overlay) {
+                    console.error("Sidebar elements not found!");
+
+                    return;
+                }
+
+                /* Open / Close Sidebar */
+
+                menuButton.addEventListener("click", function () {
+                    sidebar.classList.toggle("open");
+
+                    overlay.classList.toggle("open");
+                });
+
+                /* Close Sidebar */
+
+                overlay.addEventListener("click", function () {
+                    sidebar.classList.remove("open");
+
+                    overlay.classList.remove("open");
+                });
+
+                /* Close after menu click */
+
+                const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+                sidebarLinks.forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        sidebar.classList.remove("open");
+
+                        overlay.classList.remove("open");
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

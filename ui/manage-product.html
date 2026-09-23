@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>GSMS - Manage Products</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
+    <meta name="csrf-token"
+          content="kmapods5wQ5L1hn7rcR9OPst7EsN0gC7SrHh3m9K">
+
+
+    <!-- Material Design Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,700">
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="css/bootstrap.min.css">
+
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet"
+          href="css/style.css?v=1.0">
+
+    <link rel="stylesheet"
+          href="css/sidebar-menu.css?v=1.0">
+
+
+    <!-- ONE CUSTOM CSS -->
+    <link rel="stylesheet"
+          href="css/custom.css?v=2.0">
+
+</head>
+
+
+<body class="tooltips">
+
+<div class="container">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside id="gsmsSidebar"
+           class="gsms-sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                <i class="zmdi zmdi-shopping-cart"></i>
+            </div>
+
+            <div>
+                <h3>GSMS</h3>
+                <span>Grocery Store</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html"
+               class="sidebar-link">
+
+                <i class="zmdi zmdi-view-dashboard"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="manage-product.html"
+               class="sidebar-link active">
+
+                <i class="zmdi zmdi-assignment"></i>
+
+                <span>Manage Products</span>
+
+            </a>
+
+
+            <a href="order.html"
+               class="sidebar-link">
+
+                <i class="zmdi zmdi-shopping-cart"></i>
+
+                <span>New Order</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Sidebar Overlay -->
+
+    <div id="sidebarOverlay"
+         class="sidebar-overlay">
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header content rows-content-header">
+
+        <!-- Hamburger -->
+
+        <button id="menuButton"
+                class="button-menu-mobile"
+                type="button">
+
+            <i class="zmdi zmdi-menu"></i>
+
+        </button>
+
+
+        <nav class="navbar navbar-default"
+             role="navigation">
+
+            <div class="container">
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav visible-lg visible-md limit-chars">
+
+                        <li>
+                            <a href="index.html"
+                               title="Dashboard">
+
+                                <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="manage-product.html"
+                               title="Products">
+
+                                <i class="zmdi zmdi-assignment zmdi-hc-fw"></i>
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="right content-page">
+
+        <div class="body content rows scroll-y">
+
+
+            <section class="dashboard-card"
+                     id="taskFormContainer">
+
+
+                <!-- =================================================
+                     PAGE HEADER
+                     ================================================= -->
+
+                <div class="dashboard-header">
+
+
+                    <!-- Center Title -->
+
+                    <div class="header-title">
+
+                        <span class="header-icon">
+
+                            <i class="zmdi zmdi-assignment"></i>
+
+                        </span>
+
+
+                        <h1>
+                            Manage Products
+                        </h1>
+
+                    </div>
+
+
+
+                    <!-- Right Button -->
+
+                    <div class="header-actions">
+
+                        <button type="button"
+                                class="action-btn order-btn"
+                                data-toggle="modal"
+                                data-target="#productModal">
+
+                            <i class="zmdi zmdi-plus"></i>
+
+                            <span>
+                                Add New Product
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRODUCT CONTENT
+                     ================================================= -->
+
+                <div class="dashboard-body">
+
+
+                    <!-- Section Heading -->
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <h2>
+                                Product List
+                            </h2>
+
+                            <p>
+                                Manage your grocery store products
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PRODUCT TABLE
+                         ================================================= -->
+
+                    <div class="table-container">
+
+                        <div class="table-responsive">
+
+                            <table class="table orders-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Unit
+                                        </th>
+
+                                        <th>
+                                            Price Per Unit
+                                        </th>
+
+                                        <th style="width: 150px;">
+                                            Action
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    <!--
+                                        Products will be inserted
+                                        dynamically by manage-product.js
+                                    -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <!-- Empty State -->
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+
+                                <i class="zmdi zmdi-assignment"></i>
+
+                            </div>
+
+
+                            <h3>
+                                No Products Found
+                            </h3>
+
+
+                            <p>
+                                Add your first grocery product
+                                to get started.
+                            </p>
+
+
+                            <button type="button"
+                                    class="empty-order-btn"
+                                    data-toggle="modal"
+                                    data-target="#productModal">
+
+                                <i class="zmdi zmdi-plus"></i>
+
+                                Add Product
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         ADD / EDIT PRODUCT MODAL
+         ===================================================== -->
+
+    <div class="modal fade-scale"
+         id="productModal"
+         role="dialog"
+         data-backdrop="static">
+
+
+        <div class="modal-dialog">
+
+
+            <div class="modal-content product-modal">
+
+
+                <!-- Modal Header -->
+
+                <div class="modal-header product-modal-header">
+
+                    <div class="modal-title-wrapper">
+
+                        <div class="modal-icon">
+
+                            <i class="zmdi zmdi-assignment"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h4 class="modal-title">
+                                Add New Product
+                            </h4>
+
+                            <p>
+                                Enter product details below
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal">
+
+                        &times;
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Modal Body -->
+
+                <div class="modal-body">
+
+                    <form id="productForm">
+
+    <input type="hidden"
+           name="id"
+           id="id"
+           value="0">
+
+
+    <!-- Product Name -->
+    <div class="form-group">
+
+        <label for="name">
+            Product Name
+        </label>
+
+        <input
+            class="form-control"
+            placeholder="Enter product name"
+            name="name"
+            id="name"
+            type="text"
+            autocomplete="off">
+
+        <small id="nameError" class="form-error"></small>
+
+    </div>
+
+
+    <!-- Unit -->
+    <div class="form-group">
+
+        <label for="uoms">
+            Unit
+        </label>
+
+        <select
+            name="uoms"
+            id="uoms"
+            class="form-control">
+
+            <option value="">-- Select Unit --</option>
+
+        </select>
+
+        <small id="uomsError" class="form-error"></small>
+
+    </div>
+
+
+    <!-- Price -->
+    <div class="form-group">
+
+        <label for="price">
+            Price Per Unit
+        </label>
+
+        <div class="price-input">
+
+            <span>₹</span>
+
+            <input
+                class="form-control"
+                placeholder="Enter price"
+                name="price"
+                id="price"
+                type="text"
+                autocomplete="off">
+
+        </div>
+
+        <small id="priceError" class="form-error"></small>
+
+    </div>
+
+</form>
+
+                </div>
+
+
+
+                <!-- Modal Footer -->
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="btn modal-cancel-btn"
+                            data-dismiss="modal">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="button"
+                            class="btn modal-save-btn"
+                            id="saveProduct">
+
+                        <i class="zmdi zmdi-check"></i>
+
+                        Save Product
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="js/packages/jquery.min.js"></script>
+
+<script src="js/packages/bootstrap.min.js"></script>
+
+<script src="js/custom/common.js"></script>
+
+<script src="js/custom/manage-product.js"></script>
+
+
+
+<!-- =====================================================
+     SIDEBAR JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const sidebar =
+        document.getElementById("gsmsSidebar");
+
+    const overlay =
+        document.getElementById("sidebarOverlay");
+
+
+    if (!menuButton || !sidebar || !overlay) {
+
+        console.error("Sidebar elements not found!");
+
+        return;
+    }
+
+
+    /* Open / Close Sidebar */
+
+    menuButton.addEventListener("click", function () {
+
+        sidebar.classList.toggle("open");
+
+        overlay.classList.toggle("open");
+
+    });
+
+
+    /* Close Sidebar */
+
+    overlay.addEventListener("click", function () {
+
+        sidebar.classList.remove("open");
+
+        overlay.classList.remove("open");
+
+    });
+
+
+    /* Close sidebar after menu click */
+
+    const sidebarLinks =
+        document.querySelectorAll(".sidebar-link");
+
+
+    sidebarLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            sidebar.classList.remove("open");
+
+            overlay.classList.remove("open");
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
