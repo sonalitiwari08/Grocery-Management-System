@@ -1,6 +1,7 @@
 from datetime import datetime
 from sql_connection import get_sql_connection
 
+# This method is used to insert order in database.
 def insert_order(connection, order):
     cursor = connection.cursor()
 
